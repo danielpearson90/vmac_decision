@@ -234,13 +234,6 @@
       dmBalance = Math.floor(Math.random() * 4);
     }
 
-    jsPsych.data.addProperties({
-      sub_num: sona_id,
-      col_balance: colBalance,
-      dm_balance: dmBalance,
-      resultsID: resultsID,
-    });
-
     var fieldsToIgnore = [
       "internal_node_id",
       "stimulus",
@@ -2867,9 +2860,9 @@
           '<h2 style="text-align:left;line-height:190%;margin:' +
           mWidth +
           ';">Consent form &ndash; Participant providing own consent</h2><p style="text-align:left;font-weight:bold;">Declaration by the participant</p>' +
-          "<ul line-height:190%;margin:" +
+          "<ul style='text-align:left;line-height:190%;margin:" +
           mWidth +
-          ';"><li>I understand I am being asked to provide consent to participate in this research study.</li>' +
+          ";'><li>I understand I am being asked to provide consent to participate in this research study.</li>" +
           "<li>I have read the Participant Information Sheet or someone has read it to me in a language that I understand.</li>" +
           "<li>I understand the purposes, study tasks and risks of the research described in the study.</li>" +
           "<li>I provide my consent for the information collected about me to be used for the purpose of this research study only.</li>" +
@@ -2917,6 +2910,13 @@
             sonaID: sona_id,
             resultsID: resultsID,
             startTime: startTime,
+          });
+
+          jsPsych.data.addProperties({
+            sub_num: sona_id,
+            col_balance: colBalance,
+            dm_balance: dmBalance,
+            resultsID: resultsID,
           });
 
           if (jatosVersion == true) {
