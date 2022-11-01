@@ -3167,12 +3167,39 @@
       exptTimeline.push(using_mobile_device);
     }
 
-    jsPsych.init({
-      timeline: exptTimeline,
-      preload_images: imageFilenames,
-      display_element: jspsychTargetMLP,
-      show_preload_progress_bar: false, // hide preload progress bar
-    });
+    if (jatosVersion == true) {
+      jatos.onLoad(function () {
+        if (sonaVersion == true) {
+          sona_id = jatos.urlQueryParameters.pID;
+        }
+        var finish_url_base = jatos.studyJsonInput.finish_url_base;
+        var completion_url = finish_url_base + sona_id; // CHANGE THIS WHEN YOU HAVE THE CORRECT SONA URL
+        var finish_msg =
+          "The experiment is now complete &ndash; thanks for taking part!<br>We appreciate the time you've taken.<br><br><b>Please <a href=\"" +
+          completion_url +
+          '">click here</a> to be returned to Sona and receive your credit.</b><br><br><br></p>';
+        jsPsych.init({
+          timeline: exptTimeline,
+          preload_images: imageFilenames,
+          display_element: jspsychTargetMLP,
+          show_preload_progress_bar: false,
+          on_finish: function () {
+            document.write(
+              '<div id="endscreen" class="endscreen" style="width:100%"><div class="endscreen" style="text-align:center; font-family:Segoe UI, Arial, sans-serif; font-size:130%;line-height:160%;margin:0 auto"><p><br><br><br>' +
+                finish_msg +
+                "</p></div></div>"
+            );
+          },
+        });
+      });
+    } else {
+      jsPsych.init({
+        timeline: exptTimeline,
+        preload_images: imageFilenames,
+        display_element: jspsychTargetMLP,
+        show_preload_progress_bar: false, // hide preload progress bar
+      });
+    }
 
     // ******************* FUNCTIONS ******************
 
