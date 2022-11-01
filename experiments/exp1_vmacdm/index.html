@@ -234,6 +234,13 @@
       dmBalance = Math.floor(Math.random() * 4);
     }
 
+    jsPsych.data.addProperties({
+      sub_num: sona_id,
+      col_balance: colBalance,
+      dm_balance: dmBalance,
+      resultsID: resultsID,
+    });
+
     var fieldsToIgnore = [
       "internal_node_id",
       "stimulus",
@@ -2824,7 +2831,7 @@
           prizeStr +
           ".<br></li>" +
           "<li> <p><b>What are the possible benefits to participation?</b><br>We cannot promise that you will receive any benefits from this study, but we hope to use the findings from this study to better understand the relationship between attention and decision-making.</p></li>" +
-          "<li> <p><b>What will happen to information about me?</b><br>The information that you give us will be kept for 10 years after the project's completion. We will store information about you in a non-identifiable format at UNSW (Kensington Campus).<br>Researchers at UNSW are requested to store their aggregated research data in the UNSW data repository, this is a system called ResData. Once the aggregated data are deposited into this repository, they will be retained in this system permanently, but in a format where your data will not be individually identifiable.<br>Your non-identifiable information will be used in publications and reports based on this research study. Information collected for this research project may be made available to other research projects in de-identified form only.<br>If you provide your email address during teh study, this information will be kept only until the $15 gift vouchers have been sent to the top 25&#37; of participants (which will occur within 3 months of data collection). After this time, email addresses will be irretrievably stripped from the data files to ensure your privacy, confidentiality and anonymity are preserved.</p></li>" +
+          "<li> <p><b>What will happen to information about me?</b><br>The information that you give us will be kept for 10 years after the project's completion. We will store information about you in a non-identifiable format at UNSW (Kensington Campus).<br>Researchers at UNSW are requested to store their aggregated research data in the UNSW data repository, this is a system called ResData. Once the aggregated data are deposited into this repository, they will be retained in this system permanently, but in a format where your data will not be individually identifiable.<br>Your non-identifiable information will be used in publications and reports based on this research study. Information collected for this research project may be made available to other research projects in de-identified form only.<br>If you provide your email address during the study, this information will be kept only until the $15 gift vouchers have been sent to the top 25&#37; of participants (which will occur within 3 months of data collection). After this time, email addresses will be irretrievably stripped from the data files to ensure your privacy, confidentiality and anonymity are preserved.</p></li>" +
           "<li> <p><b>How and when will I find out what the results of the research study are?</b><br>The research team intend to publish and/ report the results of the research study in a variety of ways. All information published will be done in a way that will not identify you. If you would like to receive a copy of the results you can let the research team know by emailing Prof Mike Le Pelley: m.lepelley@unsw.edu.au. We will only use these details to send you the results of the research.</p></li>" +
           "<li> <p><b>What if I want to withdraw from the research study?</b><br>If you do consent to participate, you may withdraw at any time. You do not have to give any reason for withdrawing. However, please let the researcher know by email. Your decision not to participate or to withdraw from the study will not affect your relationship with UNSW Sydney. If you decide to withdraw from the research study, the researchers will not collect additional information from you. Any identifiable information about you will be withdrawn from the research project.</p></li>" +
           '<li> <b>What should I do if I have further questions about my involvement in the research study?</b><br>If you require further information regarding this study or if you have any problems that may be related to your involvement in the study, you can contact the following member/s of the research team:<p class="conDets"><b><i>Research Team Contact Details</b></i><br><b>Chief Investigator:</b> Prof Mike Le Pelley<br><b>Position:</b> Professor<br><b>Telephone:</b> +61 2 9065 1458<br><b>Email:</b> m.lepelley@unsw.edu.au</p><p class="conDets"><b>Partner Investigator:</b> Dr Daniel Pearson<br><b>Position:</b> Research Associate<br><b>Email:</b> d.pearson@unsw.edu.au</p></li>' +
@@ -2860,7 +2867,7 @@
           '<h2 style="text-align:left;line-height:190%;margin:' +
           mWidth +
           ';">Consent form &ndash; Participant providing own consent</h2><p style="text-align:left;font-weight:bold;">Declaration by the participant</p>' +
-          '<ul style="text-align:left;line-height:190%;margin:' +
+          "<ul line-height:190%;margin:" +
           mWidth +
           ';"><li>I understand I am being asked to provide consent to participate in this research study.</li>' +
           "<li>I have read the Participant Information Sheet or someone has read it to me in a language that I understand.</li>" +
@@ -2868,7 +2875,7 @@
           "<li>I provide my consent for the information collected about me to be used for the purpose of this research study only.</li>" +
           "<li>I have been given contact details of the researchers to enable me to ask questions about my participation.</li>" +
           "<li>I freely agree to participate in this research study as described and understand that I am free to withdraw at any time during the study and withdrawal will not affect my relationship with any of the named organisations and/or research team members.</li></ul><br>" +
-          "<p>If you wish to receive a copy of these results, please email Prof. Mike Le Pelley at m.lepelley@unsw.edu.au</p>" +
+          "<p style='text-align:left'>If you wish to receive a copy of the results of this experiment, please email Prof. Mike Le Pelley at m.lepelley@unsw.edu.au</p>" +
           "<p><b>Please click on the appropriate button below.</b></p><br>";
 
         return htmlStr;
